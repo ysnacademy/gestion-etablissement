@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+http://www.springframework.org/schema/tx
+
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+
+http://www.springframework.org/schema/context
+
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<!-- Hibernate session factory -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.ysnacademy.model.Personne</value>
+				<value>com.ysnacademy.model.Agent</value>
+				<value>com.ysnacademy.model.CadreAdministratif</value>
+				<value>com.ysnacademy.model.Eleve</value>
+				<value>com.ysnacademy.model.Enseignant</value>
+				<value>com.ysnacademy.model.Diplome</value>
+				<value>com.ysnacademy.model.Classe</value>
+				<value>com.ysnacademy.model.AbsenceEleve</value>
+				<value>com.ysnacademy.model.MotifAbsence</value>
+				<value>com.ysnacademy.model.Matiere</value>
+				<value>com.ysnacademy.model.Note</value>
+				<value>com.ysnacademy.model.Periode</value>
+				<value>com.ysnacademy.model.Bulletin</value>
+				<value>com.ysnacademy.model.SeanceCours</value>
+				<value>com.ysnacademy.model.TuteurEleve</value>
+				<value>com.ysnacademy.model.Inscription</value>
+				<value>com.ysnacademy.model.AnneeScolaire</value>
+				<value>com.ysnacademy.model.Employe</value>
+				
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

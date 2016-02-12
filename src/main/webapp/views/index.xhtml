@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to OTV_JSF_Spring_Hibernate_Project</title>
+</h:head>
+<h:body>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel for="name" value="Name : " /></td>
+				<td><p:inputText id="name" value="#{personneMB.nom}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="nameMsg" />
+					</p:inputText> <p:message id="nameMsg" for="name" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="surname" value="Surname : " /></td>
+				<td><p:inputText id="surname" value="#{personneMB.prenom}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="surnameMsg" />
+					</p:inputText> <p:message id="surnameMsg" for="surname" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="email" value="email : " /></td>
+				<td><p:inputText id="email" value="#{personneMB.email}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="emailMsg" />
+					</p:inputText> <p:message id="emailMsg" for="email" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="telMobile" value="telMobile : " /></td>
+				<td><p:inputText id="telMobile" value="#{personneMB.telMobile}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="telMobileMsg" />
+					</p:inputText> <p:message id="telMobileMsg" for="telMobile" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="telDomicile" value="telDomicile : " /></td>
+				<td><p:inputText id="telDomicile"
+						value="#{personneMB.telDomicile}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="telDomicileMsg" />
+					</p:inputText> <p:message id="telDomicileMsg" for="telDomicile" display="icon" />
+				</td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="genre" value="genre : " /></td>
+				<td><p:inputText id="genre" value="#{personneMB.genre}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="genreMsg" />
+					</p:inputText> <p:message id="genreMsg" for="genre" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="cin" value="cin : " /></td>
+				<td><p:inputText id="cin" value="#{personneMB.cin}">
+						<f:validateLength minimum="5" />
+						<p:ajax event="blur" update="cinMsg" />
+					</p:inputText> <p:message id="cinMsg" for="cin" display="icon" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel for="dateNaissance" value="dateNaissance" /></td>
+				<td><p:calendar id="dateNaissance"
+						value="#{personneMB.dateNaissance}" /></td>
+			</tr>
+
+			<tr>
+				<td><p:commandButton id="addUser" value="Add"
+						action="#{personneMB.addPersonne}" ajax="false" /></td>
+
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>
